@@ -13,24 +13,6 @@ const Header = () => {
         <p>{dayjs().format("hh:m:a")}</p>
         <p>{dayjs().format("dddd, MMMM DD, YYYY")}</p>
       </div>
-
-      <div className="w-11/12 mx-auto flex items-center gap-5 bg-base-200 px-2">
-        <p className="bg-secondary text-white p-1.5">Latest</p>
-        <Marquee reverse pauseOnHover duration={30000}>
-          <p className=" font-bold">
-            Match Highlights: Germany vs Spain — as it happened ! Match
-            Highlights: Germany vs Spain as...
-          </p>
-          <p className=" font-bold">
-            Match Highlights: Germany vs Spain — as it happened ! Match
-            Highlights: Germany vs Spain as...
-          </p>
-          <p className=" font-bold">
-            Match Highlights: Germany vs Spain — as it happened ! Match
-            Highlights: Germany vs Spain as...
-          </p>
-        </Marquee>
-      </div>
     </div>
   );
 };
