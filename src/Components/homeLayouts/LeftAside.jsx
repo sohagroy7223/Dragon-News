@@ -1,9 +1,10 @@
 import React from "react";
+import Categories from "./Categories";
 
 const LeftAside = () => {
   return (
     <div>
-      <h3>Left Aside</h3>
+      <Categories></Categories>
     </div>
   );
 };
