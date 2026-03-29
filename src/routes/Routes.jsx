@@ -1,10 +1,10 @@
-import { createBrowserRouter } from "react-router";
-import Header from "../Components/Header";
+import { createBrowserRouter } from "react-router-dom";
+import HomeLayout from "../layouts/HomeLayout";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    Component: Header,
+    element: <HomeLayout></HomeLayout>,
   },
   {
     path: "auth",
