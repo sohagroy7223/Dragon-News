@@ -1,11 +1,17 @@
 import React from "react";
 import logo from "../assets/logo.png";
+import dayjs from "dayjs";
 
 const Header = () => {
   return (
     <div className="flex justify-center flex-col items-center gap-3 mt-4">
       <img className="w-96" src={logo} alt="" />
-      <p>Journalism Without Fear or Favour</p>
+      <p className="text-accent">Journalism Without Fear or Favour</p>
+
+      <div className="text-center text-accent font-semibold flex gap-5">
+        <p>{dayjs().format("hh:m:a")}</p>
+        <p>{dayjs().format("dddd, MMMM DD, YYYY")}</p>
+      </div>
     </div>
   );
 };
