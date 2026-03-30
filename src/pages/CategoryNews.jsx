@@ -30,7 +30,7 @@ const CategoryNews = () => {
         Total <span className="text-green-700">{categoryNews.length}</span> news
         found
       </h3>
-      <div className="grid grid-cols-1 gap-3">
+      <div className="grid grid-cols-1 gap-3 p-2">
         {categoryNews.map((news) => (
           <NewsCard key={news.id} news={news}></NewsCard>
         ))}
