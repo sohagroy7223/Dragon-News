@@ -9,11 +9,11 @@ const CategoryNews = () => {
   const data = useLoaderData();
 
   useEffect(() => {
-    if (id == "0") {
+    if (id === "0") {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setCategoryNews(data);
       return;
-    } else if (id == "1") {
+    } else if (id === "1") {
       const braking = data.filter((news) => news.others.is_today_pick === true);
       setCategoryNews(braking);
       return;

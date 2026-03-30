@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaRegBookmark, FaShareAlt } from "react-icons/fa";
+import { FaRegBookmark, FaRegEye, FaShareAlt } from "react-icons/fa";
 
 const NewsCard = ({ news }) => {
   const [details, setDetails] = useState(false);
@@ -47,6 +47,46 @@ const NewsCard = ({ news }) => {
         >
           {details ? "show less" : "show details"}
         </button>
+        <hr className="mt-6 bg-base-200" />
+        <div className="flex justify-between items-center px-3  py-4">
+          <div className="rating">
+            <input
+              type="radio"
+              name="rating-2"
+              className="mask mask-star-2 bg-orange-400"
+              aria-label="1 star"
+            />
+            <input
+              type="radio"
+              name="rating-2"
+              className="mask mask-star-2 bg-orange-400"
+              aria-label="2 star"
+              defaultChecked
+            />
+            <input
+              type="radio"
+              name="rating-2"
+              className="mask mask-star-2 bg-orange-400"
+              aria-label="3 star"
+            />
+            <input
+              type="radio"
+              name="rating-2"
+              className="mask mask-star-2 bg-orange-400"
+              aria-label="4 star"
+            />
+            <input
+              type="radio"
+              name="rating-2"
+              className="mask mask-star-2 bg-orange-400"
+              aria-label="5 star"
+            />
+          </div>
+          <div className="flex gap-2.5 items-center ">
+            <FaRegEye size={20}></FaRegEye>
+            <p>{news.total_view}</p>
+          </div>
+        </div>
       </div>
     </div>
   );
