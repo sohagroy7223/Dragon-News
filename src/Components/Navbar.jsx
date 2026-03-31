@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className="flex justify-between">
       <div className=""></div>
-      <div className="nav flex gap-4">
+      <div className="nav flex gap-4 items-center">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/About">About</NavLink>
         <NavLink to="/career">Career</NavLink>

@@ -8,6 +8,8 @@ const NewsCard = ({ news }) => {
     setDetails(!details);
   };
 
+  const formatDate = new Date(news.author.published_date).toLocaleDateString();
+
   return (
     <div className=" border shadow-2xl items-center rounded-2xl mt-2">
       <div className="flex justify-between items-center w-full md:px-3 py-3 rounded-2xl bg-base-300">
@@ -19,7 +21,7 @@ const NewsCard = ({ news }) => {
           </div>
           <div className="text-sm">
             <h3 className="font-semibold">{news.author.name}</h3>
-            <p>{news.author.published_date}</p>
+            <p>{formatDate}</p>
           </div>
         </div>
         {/* icon */}
