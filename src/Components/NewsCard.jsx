@@ -9,8 +9,8 @@ const NewsCard = ({ news }) => {
   };
 
   return (
-    <div className="p-2 border shadow-2xl items-center rounded-2xl mt-2">
-      <div className="flex justify-between items-center w-full md:px-3 py-2 bg-base-300">
+    <div className=" border shadow-2xl items-center rounded-2xl mt-2">
+      <div className="flex justify-between items-center w-full md:px-3 py-3 rounded-2xl bg-base-300">
         <div className="flex items-center gap-2 text-xs md:text-sm ">
           <div className="avatar w-8 h-8 md:h-11 md:w-11">
             <div className="ring-primary ring-offset-base-100 rounded-full ring-2 ring-offset-2">
@@ -28,7 +28,7 @@ const NewsCard = ({ news }) => {
           <FaRegBookmark></FaRegBookmark>
         </div>
       </div>
-      <div className="mt-4">
+      <div className="mt-4 p-4">
         <p className="md:font-bold font-semibold px-3">{news.title}</p>
         <img
           className="w-full mx-auto rounded-xl mt-2"
