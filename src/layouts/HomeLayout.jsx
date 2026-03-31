@@ -46,7 +46,7 @@ const HomeLayout = () => {
             )}
           </div>
           <div
-            className={`${showMenu ? "block" : "-mt-315"}  bg-base-300 md:p-8 p-4 md:w-56 rounded-2xl duration-1000 -ml-30 sticky top-0 h-fit`}
+            className={`${showMenu ? "block" : "-mt-315"}  bg-base-300 md:p-8 p-4 md:w-56 rounded-2xl duration-1000 -ml-30 `}
           >
             {menu}
           </div>
