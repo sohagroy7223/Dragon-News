@@ -30,15 +30,15 @@ const HomeLayout = () => {
       <nav className="w-11/12 mx-auto my-3">
         <Navbar></Navbar>
       </nav>
-      <main className="w-11/12 mx-auto my-3 gap-4 grid grid-cols-12">
+      <main className="w-11/12 mx-auto my-3 gap-4 mt-7 grid grid-cols-12">
         <aside className="col-span-2 md:col-span-2">
           <LeftAside></LeftAside>
         </aside>
         <section className="main col-span-9 md:col-span-9">
           <Outlet></Outlet>
         </section>
-        <aside className="md:col-span-1 col-span-1 mx-auto relative ">
-          <div className="md:ml-8  " onClick={handelShow}>
+        <aside className="md:col-span-1  col-span-1 mx-auto relative ">
+          <div className="md:ml-8 mt-3" onClick={handelShow}>
             {showMenu ? (
               <IoClose size={25}></IoClose>
             ) : (
@@ -46,7 +46,7 @@ const HomeLayout = () => {
             )}
           </div>
           <div
-            className={`${showMenu ? "block" : "-mt-299"} absolute bg-base-300 md:p-8 p-4 md:w-56 rounded-2xl duration-1000 -ml-30 `}
+            className={`${showMenu ? "block" : "-mt-315"} absolute bg-base-300 md:p-8 p-4 md:w-56 rounded-2xl duration-1000 -ml-30 `}
           >
             {menu}
           </div>
