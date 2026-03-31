@@ -31,7 +31,7 @@ const HomeLayout = () => {
         <Navbar></Navbar>
       </nav>
       <main className="w-11/12 mx-auto my-3 gap-4 mt-7 grid grid-cols-12">
-        <aside className="col-span-2 md:col-span-2">
+        <aside className="col-span-2 md:col-span-2 sticky top-0 h-fit">
           <LeftAside></LeftAside>
         </aside>
         <section className="main col-span-9 md:col-span-9">
@@ -46,7 +46,7 @@ const HomeLayout = () => {
             )}
           </div>
           <div
-            className={`${showMenu ? "block" : "-mt-315"} absolute bg-base-300 md:p-8 p-4 md:w-56 rounded-2xl duration-1000 -ml-30 `}
+            className={`${showMenu ? "block" : "-mt-315"}  bg-base-300 md:p-8 p-4 md:w-56 rounded-2xl duration-1000 -ml-30 sticky top-0 h-fit`}
           >
             {menu}
           </div>
