@@ -26,7 +26,7 @@ const CategoryNews = () => {
 
   return (
     <div>
-      <h3 className="font-bold">
+      <h3 className="font-bold text-center">
         Total <span className="text-green-700">{categoryNews.length}</span> news
         found
       </h3>

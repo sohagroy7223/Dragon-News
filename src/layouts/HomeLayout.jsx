@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../Components/Header";
 import { Outlet } from "react-router-dom";
 import LatestNews from "../Components/LatestNews";
 import Navbar from "../Components/Navbar";
 import LeftAside from "../Components/homeLayouts/LeftAside";
 import RightAside from "../Components/RightAside";
+import { IoMdMenu } from "react-icons/io";
+import { IoClose } from "react-icons/io5";
 
 const HomeLayout = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
+  const handelShow = () => {
+    setShowMenu(!showMenu);
+  };
+
+  const menu = (
+    <>
+      <RightAside></RightAside>;
+    </>
+  );
+
   return (
     <div>
       <Header></Header>
@@ -16,15 +30,26 @@ const HomeLayout = () => {
       <nav className="w-11/12 mx-auto my-3">
         <Navbar></Navbar>
       </nav>
-      <main className="w-11/12 mx-auto my-3 grid grid-cols-12">
-        <aside className="col-span-3">
+      <main className="w-11/12 mx-auto my-3 gap-4 grid grid-cols-12">
+        <aside className="col-span-2 md:col-span-2">
           <LeftAside></LeftAside>
         </aside>
-        <section className="main col-span-6">
+        <section className="main col-span-9 md:col-span-9">
           <Outlet></Outlet>
         </section>
-        <aside className="col-span-3">
-          <RightAside></RightAside>
+        <aside className="md:col-span-1 col-span-1 mx-auto relative ">
+          <div className="md:ml-8  " onClick={handelShow}>
+            {showMenu ? (
+              <IoClose size={25}></IoClose>
+            ) : (
+              <IoMdMenu size={25}></IoMdMenu>
+            )}
+          </div>
+          <div
+            className={`${showMenu ? "block" : "-mt-286"} absolute bg-base-300 md:p-8 p-4 rounded-2xl duration-1000 -ml-30 `}
+          >
+            {menu}
+          </div>
         </aside>
       </main>
     </div>
