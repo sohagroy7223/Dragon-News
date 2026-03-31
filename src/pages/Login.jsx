@@ -3,6 +3,13 @@ import Navbar from "../Components/Navbar";
 import { Link } from "react-router";
 
 const Login = () => {
+  const handelLogin = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email, password);
+  };
+
   return (
     <div className="bg-base-300  min-h-screen">
       <div className="w-11/12 mx-auto py-4">
@@ -13,11 +20,22 @@ const Login = () => {
             Login your account!
           </h1>
           <div className="card-body">
-            <form className="fieldset">
+            <form onSubmit={handelLogin} className="fieldset">
               <label className="label">Email</label>
-              <input type="email" className="input" placeholder="Email" />
+              <input
+                type="email"
+                className="input"
+                name="email"
+                placeholder="Email"
+              />
               <label className="label">Password</label>
-              <input type="password" className="input" placeholder="Password" />
+              <input
+                type="password"
+                className="input"
+                name="password"
+                autoComplete="current_password"
+                placeholder="Password"
+              />
               <div>
                 <a className="link link-hover">Forgot password?</a>
               </div>
