@@ -1,11 +1,7 @@
-// alert DON't SHARE THIS CODE ONLINE
-
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getAuth } from "firebase/auth"; // ✅ ADD THIS
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAdgjvgf1XDKA8Gq76z8v7_dDuiLoKaVR0",
   authDomain: "dragon-news-firebase-47f6c.firebaseapp.com",
@@ -18,7 +14,5 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize Firebase Authentication and get a reference to the service
-
-// eslint-disable-next-line no-undef
-export const auth = getAuth(app);
+// Initialize Auth
+export const auth = getAuth(app); // ✅ এখন ঠিক

@@ -27,6 +27,7 @@ const Login = () => {
                 className="input"
                 name="email"
                 placeholder="Email"
+                required
               />
               <label className="label">Password</label>
               <input
@@ -35,6 +36,7 @@ const Login = () => {
                 name="password"
                 autoComplete="current_password"
                 placeholder="Password"
+                required
               />
               <div>
                 <a className="link link-hover">Forgot password?</a>

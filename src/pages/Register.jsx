@@ -30,6 +30,7 @@ const Register = () => {
                 className="input"
                 name="name"
                 placeholder="Enter your name"
+                required
               />
               <label className="label">Photo URL</label>
               <input
@@ -45,6 +46,7 @@ const Register = () => {
                 className="input"
                 name="email"
                 placeholder="Email"
+                required
               />
               <label className="label">Password</label>
               <input
@@ -52,6 +54,7 @@ const Register = () => {
                 className="input"
                 name="password"
                 placeholder="Password"
+                required
               />
               <div></div>
               <button className="btn btn-neutral mt-4">Register</button>
