@@ -4,7 +4,17 @@ import userI from "../assets/user.png";
 import { AuthContext } from "../Context/AuthContext";
 
 const Navbar = () => {
-  const { user } = use(AuthContext);
+  const { user, SignOut } = use(AuthContext);
+
+  const handelSignOut = () => {
+    SignOut()
+      .then(() => {
+        console.log("sign out success fully");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <div className="flex justify-between">
@@ -17,11 +27,11 @@ const Navbar = () => {
       <div className="login flex gap-3">
         <img src={userI} alt="user" />
         {user ? (
-          <button className="btn btn-primary">Log out</button>
+          <button onClick={handelSignOut} className="btn btn-primary">
+            Log out
+          </button>
         ) : (
-          <Link to="/login">
-            <button className="btn btn-primary">Login</button>
-          </Link>
+          <button className="btn btn-primary">Login</button>
         )}
       </div>
     </div>
