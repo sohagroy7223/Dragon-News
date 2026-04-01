@@ -8,8 +8,9 @@ const Register = () => {
 
     const name = e.target.name.value;
     const email = e.target.email.value;
+    const photo = e.target.photo.value;
     const password = e.target.password.value;
-    console.log(name, email, password);
+    console.log(name, email, photo, password);
   };
 
   return (
@@ -28,6 +29,13 @@ const Register = () => {
                 type="text"
                 className="input"
                 name="name"
+                placeholder="Enter your name"
+              />
+              <label className="label">Photo URL</label>
+              <input
+                type="text"
+                className="input"
+                name="photo"
                 placeholder="Enter your name"
               />
 
@@ -49,7 +57,7 @@ const Register = () => {
               <button className="btn btn-neutral mt-4">Register</button>
             </form>
             <p className="text-center">
-              Dont’t Have An Account ?{" "}
+              Already Have An Account ?{" "}
               <Link to="/login">
                 <span className="text-blue-500 font-semibold hover:underline cursor-pointer">
                   Login
