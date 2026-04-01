@@ -1,13 +1,24 @@
-import React from "react";
+import React, { use } from "react";
 import Navbar from "../Components/Navbar";
 import { Link } from "react-router";
+import { AuthContext } from "../Context/AuthContext";
 
 const Login = () => {
+  const { SignInUser } = use(AuthContext);
+
   const handelLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email, password);
+
+    SignInUser(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
