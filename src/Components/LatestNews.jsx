@@ -5,7 +5,7 @@ const LatestNews = () => {
   return (
     <div className=" flex items-center gap-5 bg-base-200 px-2">
       <p className="bg-secondary text-white p-1.5">Latest</p>
-      <Marquee className="flex gap-5" reverse pauseOnHover duration={30000}>
+      <Marquee className="flex gap-5" duration={50000} reverse>
         <p className=" font-bold">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
           corrupti laudantium nostrum ut quos facere?...,

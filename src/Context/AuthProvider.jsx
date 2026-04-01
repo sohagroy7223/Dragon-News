@@ -2,6 +2,8 @@ import React from "react";
 import { AuthContext } from "./AuthContext";
 
 const AuthProvider = ({ children }) => {
+  const SignUpUser = () => {};
+
   const userInfo = {
     email: "sohagroy7223@gmail.com",
   };

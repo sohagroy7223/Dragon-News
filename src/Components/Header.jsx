@@ -1,7 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.png";
 import dayjs from "dayjs";
-import Marquee from "react-easy-marquee";
 
 const Header = () => {
   return (
