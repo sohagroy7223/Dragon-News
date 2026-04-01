@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "../Components/Navbar";
 import { Link } from "react-router";
+import { AuthContext } from "../Context/AuthContext";
 
 const Register = () => {
+  const { SignUpUser } = useContext(AuthContext);
+
   const handelRegister = (e) => {
     e.preventDefault();
 
@@ -10,7 +13,15 @@ const Register = () => {
     const email = e.target.email.value;
     const photo = e.target.photo.value;
     const password = e.target.password.value;
-    console.log(name, email, photo, password);
+    console.log(name, photo);
+
+    SignUpUser(email, password)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -45,6 +56,7 @@ const Register = () => {
                 type="email"
                 className="input"
                 name="email"
+                autoComplete="email"
                 placeholder="Email"
                 required
               />
@@ -53,6 +65,7 @@ const Register = () => {
                 type="password"
                 className="input"
                 name="password"
+                autoComplete="current-password"
                 placeholder="Password"
                 required
               />
