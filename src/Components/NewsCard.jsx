@@ -40,7 +40,7 @@ const NewsCard = ({ news }) => {
         <p>{news.details.slice(0, 150)}</p>
 
         <Link
-          to="/newsDetails"
+          to={`newsDetails/${news.id}`}
           className="text-green-700 font-semibold hover:underline"
         >
           show details
