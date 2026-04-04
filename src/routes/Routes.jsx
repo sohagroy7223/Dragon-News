@@ -10,30 +10,36 @@ import About from "../pages/About";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomeLayout></HomeLayout>,
+    Component: HomeLayout,
     children: [
       {
-        path: "",
-        element: <Home></Home>,
+        index: true,
+        Component: Home,
       },
       {
         path: "/category/:id",
-        element: <CategoryNews></CategoryNews>,
-        loader: () => fetch("/news.json"),
+        Component: CategoryNews,
+        loader: async () => {
+          const res = await fetch("/news.json");
+          if (!res.ok) {
+            throw new Error("Failed to load data");
+          }
+          return res.json();
+        },
       },
     ],
   },
   {
     path: "login",
-    element: <Login></Login>,
+    Component: Login,
   },
   {
     path: "register",
-    element: <Register></Register>,
+    Component: Register,
   },
   {
     path: "about",
-    element: <About></About>,
+    Component: About,
   },
   {
     path: "/*",

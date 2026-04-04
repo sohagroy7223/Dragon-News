@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import Navbar from "../Components/Navbar";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 
 const Register = () => {
   const { SignUpUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handelRegister = (e) => {
     e.preventDefault();
@@ -18,6 +19,7 @@ const Register = () => {
     SignUpUser(email, password)
       .then((result) => {
         console.log(result);
+        navigate("/category/0");
       })
       .catch((error) => {
         console.log(error);

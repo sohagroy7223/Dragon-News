@@ -9,17 +9,20 @@ const CategoryNews = () => {
   const data = useLoaderData();
 
   useEffect(() => {
-    if (id === "0") {
+    const numericId = Number(id);
+
+    if (numericId === 0) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setCategoryNews(data);
-      return;
-    } else if (id === "1") {
-      const braking = data.filter((news) => news.others.is_today_pick === true);
-      setCategoryNews(braking);
-      return;
+    } else if (numericId === 1) {
+      const breaking = data.filter(
+        (news) => news.others?.is_today_pick === true,
+      );
+      setCategoryNews(breaking);
     } else {
-      const filterNews = data.filter((news) => news.category_id == id);
-      // console.log(filterNews);
+      const filterNews = data.filter(
+        (news) => Number(news.category_id) === numericId,
+      );
       setCategoryNews(filterNews);
     }
   }, [data, id]);
