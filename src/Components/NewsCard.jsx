@@ -1,13 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaRegBookmark, FaRegEye, FaShareAlt } from "react-icons/fa";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
-  const [details, setDetails] = useState(false);
-
-  const handelShowDetails = () => {
-    setDetails(!details);
-  };
-
   const formatDate = new Date(news.author.published_date).toLocaleDateString();
 
   return (
@@ -42,13 +37,14 @@ const NewsCard = ({ news }) => {
           <FaRegBookmark></FaRegBookmark>
         </div>
 
-        <p>{details ? news.details : news.details.slice(0, 150)}</p>
-        <button
+        <p>{news.details.slice(0, 150)}</p>
+
+        <Link
+          to="/newsDetails"
           className="text-green-700 font-semibold hover:underline"
-          onClick={handelShowDetails}
         >
-          {details ? "show less" : "show details"}
-        </button>
+          show details
+        </Link>
         <hr className="mt-6 bg-base-200" />
         <div className="flex justify-between items-center px-3  py-4">
           <div className="rating">
