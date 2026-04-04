@@ -1,10 +1,11 @@
 import React, { use } from "react";
 import Navbar from "../Components/Navbar";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 
 const Login = () => {
   const { SignInUser } = use(AuthContext);
+  const navigate = useNavigate();
 
   const handelLogin = (e) => {
     e.preventDefault();
@@ -15,6 +16,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate("/category/0");
       })
       .catch((error) => {
         console.log(error);
@@ -52,6 +54,7 @@ const Login = () => {
               <div>
                 <a className="link link-hover">Forgot password?</a>
               </div>
+
               <button className="btn btn-neutral mt-4">Login</button>
             </form>
             <p className="text-center">

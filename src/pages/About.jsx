@@ -1,7 +1,9 @@
 import React from "react";
 import sohag from "../assets/sohag.png";
+import { useNavigate } from "react-router";
 
 const About = () => {
+  const navigate = useNavigate();
   return (
     <div className="p-10 mx-auto">
       <h2 className="text-5xl p-8 md:text-start text-center">About me</h2>
@@ -24,6 +26,9 @@ const About = () => {
           </p>
           <button className="btn mt-4 text-base-100 bg-green-600">
             Learn more
+          </button>
+          <button onClick={() => navigate(-1)} className="btn mt-4">
+            Go back
           </button>
         </div>
       </div>
