@@ -28,7 +28,7 @@ const NewsCard = ({ news }) => {
       <div className="mt-4 p-4">
         <p className="md:font-bold font-semibold px-3">{news.title}</p>
         <img
-          className="w-full mx-auto rounded-xl mt-2"
+          className="w-full h-80 bg-cover mx-auto rounded-xl mt-2"
           src={news.image_url}
           alt=""
         />
@@ -40,7 +40,7 @@ const NewsCard = ({ news }) => {
         <p>{news.details.slice(0, 150)}</p>
 
         <Link
-          to={`newsDetails/${news.id}`}
+          to={`/newsDetails/${news.id}`}
           className="text-green-700 font-semibold hover:underline"
         >
           show details
