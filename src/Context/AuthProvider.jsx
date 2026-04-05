@@ -10,6 +10,7 @@ import { auth } from "../Firebase/firebase.config";
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const SignUpUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -24,6 +25,7 @@ const AuthProvider = ({ children }) => {
       if (currentUser) {
         // console.log("has User", currentUser);
         setUser(currentUser);
+        setLoading(false);
       } else {
         // console.log("don't have", currentUser);
       }
@@ -38,6 +40,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const userInfo = {
+    loading,
     user,
     SignUpUser,
     SignInUser,
