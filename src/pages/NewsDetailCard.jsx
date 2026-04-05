@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const NewsDetailCard = ({ news }) => {
   console.log(news);
@@ -14,6 +15,12 @@ const NewsDetailCard = ({ news }) => {
       </div>
       <h3 className="md:text-2xl font-bold mb-5">{news.title}</h3>
       <p className="md:text-lg text-xs">{news.details}</p>
+      <Link
+        to={`/category/${news.category_id}`}
+        className="mt-5 btn bg-secondary text-base-100"
+      >
+        all news in this category
+      </Link>
     </div>
   );
 };
