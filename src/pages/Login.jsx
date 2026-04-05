@@ -1,11 +1,12 @@
 import React, { use } from "react";
 import Navbar from "../Components/Navbar";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 
 const Login = () => {
   const { SignInUser } = use(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handelLogin = (e) => {
     e.preventDefault();
@@ -16,7 +17,7 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         console.log(user);
-        navigate("/category/0");
+        navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {
         console.log(error);

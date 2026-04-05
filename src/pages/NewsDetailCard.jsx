@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router";
 
 const NewsDetailCard = ({ news }) => {
-  console.log(news);
+  // console.log(news);
   return (
     <div className="my-4">
       <h3 className=" my-1 font-bold">dragon news</h3>
