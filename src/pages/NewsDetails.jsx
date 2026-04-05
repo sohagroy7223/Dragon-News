@@ -22,11 +22,11 @@ const NewsDetails = () => {
       <header>
         <Header></Header>
       </header>
-      <main className="grid grid-cols-12">
-        <div className="col-span-9">
+      <main className="grid grid-cols-12 gap-3 justify-center">
+        <div className="md:col-span-9 col-span-8">
           <NewsDetailCard news={news}></NewsDetailCard>
         </div>
-        <aside className="col-span-3">
+        <aside className="md:col-span-3 col-span-4">
           <RightAside></RightAside>
         </aside>
       </main>
