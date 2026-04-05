@@ -5,16 +5,16 @@ import Loading from "../../pages/Loading";
 
 const PrivateRouts = ({ children }) => {
   const { user, loading } = use(AuthContext);
-  //   console.log(user, loading);
+  console.log(user);
 
   if (loading) {
     return <Loading></Loading>;
   }
 
-  if (!user) {
-    return <Navigate to="/login"></Navigate>;
+  if (user) {
+    return children;
   }
-  return children;
+  return <Navigate to="/login"></Navigate>;
 };
 
 export default PrivateRouts;

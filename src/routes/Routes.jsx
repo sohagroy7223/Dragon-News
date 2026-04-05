@@ -44,7 +44,7 @@ const router = createBrowserRouter([
     Component: About,
   },
   {
-    path: "newsDetails/:id",
+    path: "/newsDetails/:id",
     // Component: NewsDetails,
     element: (
       <PrivateRouts>
