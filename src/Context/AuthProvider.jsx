@@ -25,7 +25,7 @@ const AuthProvider = ({ children }) => {
         // console.log("has User", currentUser);
         setUser(currentUser);
       } else {
-        console.log("don't have", currentUser);
+        // console.log("don't have", currentUser);
       }
     });
     return () => {
