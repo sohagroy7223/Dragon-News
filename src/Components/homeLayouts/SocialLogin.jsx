@@ -4,7 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../Context/AuthContext";
 
 const SocialLogin = () => {
-  const { loginWithGoogle, setUser } = use(AuthContext);
+  const { loginWithGoogle, setUser, loginWithGitHub } = use(AuthContext);
 
   const handelLoginWithGoogle = () => {
     loginWithGoogle()
@@ -14,6 +14,16 @@ const SocialLogin = () => {
         console.log(user);
       })
       .then((error) => {
+        console.log(error);
+      });
+  };
+
+  const handelLoginWithGitHub = () => {
+    loginWithGitHub()
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
         console.log(error);
       });
   };
@@ -28,7 +38,10 @@ const SocialLogin = () => {
         {" "}
         <FcGoogle size={25}></FcGoogle> Login With Google
       </button>
-      <button className="btn btn-outline w-full flex items-center justify-center gap-2 text-xs md:text-sm">
+      <button
+        onClick={handelLoginWithGitHub}
+        className="btn btn-outline w-full flex items-center justify-center gap-2 text-xs md:text-sm"
+      >
         {" "}
         <FaGithub size={25}></FaGithub> Login With GitHub
       </button>
