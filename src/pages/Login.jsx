@@ -30,7 +30,7 @@ const Login = () => {
 
     resetPassword(email)
       .then(() => {
-        alert("we send massage in your email, please check your email");
+        alert("we send a massage in your email, please check your email");
       })
       .catch((error) => {
         console.log(error);
