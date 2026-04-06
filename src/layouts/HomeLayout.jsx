@@ -7,9 +7,13 @@ import LeftAside from "../Components/homeLayouts/LeftAside";
 import RightAside from "../Components/RightAside";
 import { IoMdMenu } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
+import { useNavigation } from "react-router";
+import Loading from "../pages/Loading";
 
 const HomeLayout = () => {
   const [showMenu, setShowMenu] = useState(false);
+
+  const { state } = useNavigation();
 
   const handelShow = () => {
     setShowMenu(!showMenu);
@@ -35,7 +39,7 @@ const HomeLayout = () => {
           <LeftAside></LeftAside>
         </aside>
         <section className="main col-span-9 md:col-span-9">
-          <Outlet></Outlet>
+          {state === "loading" ? <Loading></Loading> : <Outlet></Outlet>}
         </section>
         <aside className="md:col-span-1  col-span-1 mx-auto relative ">
           <div className="md:ml-8 mt-3" onClick={handelShow}>

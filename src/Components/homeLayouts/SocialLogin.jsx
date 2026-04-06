@@ -4,14 +4,12 @@ import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from "../../Context/AuthContext";
 
 const SocialLogin = () => {
-  const { loginWithGoogle, setUser, loginWithGitHub } = use(AuthContext);
+  const { loginWithGoogle, loginWithGitHub } = use(AuthContext);
 
   const handelLoginWithGoogle = () => {
     loginWithGoogle()
       .then((result) => {
-        const user = result.user;
-        setUser(user);
-        console.log(user);
+        console.log(result);
       })
       .then((error) => {
         console.log(error);
