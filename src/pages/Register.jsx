@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 
 const Register = () => {
-  const { SignUpUser } = useContext(AuthContext);
+  const { SignUpUser, setUser, updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState("");
   const [success, setSuccess] = useState(false);
@@ -46,6 +46,15 @@ const Register = () => {
     SignUpUser(email, password)
       .then((result) => {
         console.log(result);
+        const user = result.user;
+        updateUser({ displayName: name, photoURL: photo })
+          .then(() => {
+            setUser({ ...user, displayName: name, photoURL: photo });
+          })
+          .catch((error) => {
+            console.log(error);
+            setUser(user);
+          });
         setSuccess(true);
         navigate("/category/0");
       })
