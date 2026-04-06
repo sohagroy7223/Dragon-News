@@ -1,12 +1,13 @@
-import React, { use } from "react";
+import React, { use, useRef } from "react";
 import Navbar from "../Components/Navbar";
 import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 
 const Login = () => {
-  const { SignInUser } = use(AuthContext);
+  const { SignInUser, resetPassword } = use(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
+  const emailRef = useRef();
 
   const handelLogin = (e) => {
     e.preventDefault();
@@ -18,6 +19,18 @@ const Login = () => {
         const user = result.user;
         console.log(user);
         navigate(`${location.state ? location.state : "/"}`);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const handelForgetPassword = () => {
+    const email = emailRef.current.value;
+
+    resetPassword(email)
+      .then(() => {
+        alert("we send massage in your email, please check your email");
       })
       .catch((error) => {
         console.log(error);
@@ -40,6 +53,7 @@ const Login = () => {
                 type="email"
                 className="input"
                 name="email"
+                ref={emailRef}
                 placeholder="Email"
                 required
               />
@@ -53,7 +67,9 @@ const Login = () => {
                 required
               />
               <div>
-                <a className="link link-hover">Forgot password?</a>
+                <a onClick={handelForgetPassword} className="link link-hover">
+                  Forgot password?
+                </a>
               </div>
 
               <button className="btn btn-neutral mt-4">Login</button>
