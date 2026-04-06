@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router";
 import { AuthContext } from "../Context/AuthContext";
 
 const Login = () => {
-  const { SignInUser, resetPassword } = use(AuthContext);
+  const { SignInUser, resetPassword, setUser } = use(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const emailRef = useRef();
@@ -17,7 +17,7 @@ const Login = () => {
     SignInUser(email, password)
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        setUser(user);
         navigate(`${location.state ? location.state : "/"}`);
       })
       .catch((error) => {

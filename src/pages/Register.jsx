@@ -48,6 +48,7 @@ const Register = () => {
       .then((result) => {
         console.log(result);
         const user = result.user;
+        setUser(user);
         sendEmailVerify().then(() => {
           alert("we send a massage in your email, please verified your email");
         });

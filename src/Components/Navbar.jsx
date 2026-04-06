@@ -27,7 +27,7 @@ const Navbar = () => {
       </div>
       <div className="login flex gap-3">
         <img
-          className="w-12 rounded-full"
+          className="w-12 h-14 rounded-full"
           src={`${user ? user.photoURL : userI}`}
           alt="user"
         />
