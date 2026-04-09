@@ -17,7 +17,7 @@ const Register = () => {
     const email = e.target.email.value;
     const photo = e.target.photo.value;
     const password = e.target.password.value;
-    console.log(name, photo);
+    // console.log(name, photo);
 
     // password validation
 
